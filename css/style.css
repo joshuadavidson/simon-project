@@ -1,0 +1,120 @@
+body {
+  overflow: hidden;
+}
+
+/* Link Syling */
+
+*:focus {
+  outline: none;
+  outline: 0;
+}
+a:link, a:visited {
+  border: none;
+  text-decoration: underline;
+  font-style: normal;
+  color: inherit;
+}
+a:hover {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Settings */
+sup{
+  font-size: 15px;
+  vertical-align: super;
+}
+button {
+  color: rgb(0, 0, 0);
+  padding: 10px;
+  background-color: rgb(255, 255, 255);
+  border: none;
+}
+button:hover, button:active{
+  box-shadow: 0 2px 6px rgba(255, 255, 255, 0.9);
+}
+.settings {
+  position: absolute;
+  z-index: 1;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  text-align: center;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+  color: rgb(240, 240, 240);
+  background-color: rgb(0, 0, 0);
+  padding: 10px;
+}
+#title-text {
+  font-weight: bold;
+  font-size: 45px;
+}
+#count-num {
+  font-size: 45px;
+}
+#footer {
+  font-size: 12px;
+}
+
+/* Buttons */
+
+.button {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  border-color: black;
+  border-width: 5px;
+  border-style: solid;
+}
+.prevent-click{
+  pointer-events: none;
+}
+.green {
+  width: 50%;
+  height: 50%;
+  transform: translate(-100%, -100%);
+  -webkit-transform: translate(-100%, -100%);
+  -ms-transform: translate(-100%, -100%);
+  background-color: rgb(0, 128, 0);
+  border-color: black;
+  border-width: 5px;
+  border-style: solid;
+}
+.red {
+  width: 50%;
+  height: 50%;
+  transform: translate(0%, -100%);
+  -webkit-transform: translate(0%, -100%);
+  -ms-transform: translate(0%, -100%);
+  background-color: rgb(255, 0, 0);
+}
+.yellow {
+  width: 50%;
+  height: 50%;
+  transform: translate(-100%, 0%);
+  -webkit-transform: translate(-100%, 0%);
+  -ms-transform: translate(-100%, 0%);
+  background-color: rgb(240, 240, 0);
+}
+.blue {
+  width: 50%;
+  height: 50%;
+  transform: translate(0%, 0%);
+  -webkit-transform: translate(0%, 0%);
+  -ms-transform: translate(0%, 0%);
+  background-color: rgb(0, 0, 255);
+}
+.green:active {
+  background-color: rgb(64, 191, 64);
+}
+.red:active {
+  background-color: rgb(255, 128, 128);
+}
+.yellow:active {
+  background-color: rgb(255, 255, 128);
+}
+.blue:active {
+  background-color: rgb(96, 96, 255);
+}
