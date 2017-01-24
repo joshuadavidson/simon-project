@@ -1,5 +1,5 @@
 /* establish global variables for ESLint */
-/* global $ Howl document */
+/* global $ Howl document location */
 
 // function that prevents user from pusing buttons
 function preventInput() {
@@ -30,9 +30,6 @@ class Game {
 
     // timer used for user input
     this.inputTimer = null;
-
-    // timer used for playing sequence
-    this.playSequenceTimer = null;
 
     // create an object for sounds that contains Howler.js objects
     this.sounds = {
@@ -89,7 +86,7 @@ class Game {
 
       // wait 1.5 seconds before restarting to allow error sound to complete
       setTimeout(() => {
-        this.restart();
+        location.reload(false);
       }, 1500);
     }
     // wrong button pressed repeat the last playSequence for user to try again
@@ -149,7 +146,7 @@ class Game {
 
       // wait 1.5 seconds before restarting to allow error sound to complete
       setTimeout(() => {
-        this.restart();
+        location.reload(false);
       }, 1500);
     }
     // repeat the last playSequence for user to try again
@@ -163,7 +160,7 @@ class Game {
       this.sounds.bad.play();
 
       // wait 1.5 seconds before starting sequence over again  to allow error sound to complete
-      this.playSequenceTimer = setTimeout(() => {
+      setTimeout(() => {
         this.playSequence();
       }, 1500);
     }
@@ -266,11 +263,9 @@ class Game {
     $('#round-num').html(this.round);
   }
 
-  // method to start/reset game called when start/reset button is pushed
-  restart() {
+  // method to start game called when start button is pushed
+  start() {
     // reset variables to initial values
-    clearTimeout(this.inputTimer);
-    clearTimeout(this.playSequenceTimer);
     this.userInput = [];
     this.round = 1;
     this.sequence = [];
@@ -299,8 +294,14 @@ $(document).ready(() => {
   const currGame = new Game();
 
   // start/reset button press handler
-  $('button').click(() => {
-    currGame.restart();
+  $('button').click(function () {
+    if ($(this).html() === 'Start') {
+      currGame.start();
+      $(this).html('Reset');
+    }
+    else {
+      location.reload(false);
+    }
   });
 
   // hardcore mode toggle handler
