@@ -1,5 +1,28 @@
 /* establish global variables for ESLint */
-/* global $ Howl document location */
+/* global Howl document location */
+
+import $ from 'jquery';
+import { Howl } from 'howler';
+
+// import custom styles for project
+import './index.scss';
+
+// import audio files
+import './audio/bad.mp3';
+import './audio/bad.ogg';
+import './audio/bad.wav';
+import './audio/blue.mp3';
+import './audio/blue.ogg';
+import './audio/blue.wav';
+import './audio/green.mp3';
+import './audio/green.ogg';
+import './audio/green.wav';
+import './audio/red.mp3';
+import './audio/red.ogg';
+import './audio/red.wav';
+import './audio/yellow.mp3';
+import './audio/yellow.ogg';
+import './audio/yellow.wav';
 
 // function that prevents user from pusing buttons
 function preventInput() {
@@ -34,23 +57,23 @@ class Game {
     // create an object for sounds that contains Howler.js objects
     this.sounds = {
       button1: new Howl({
-        urls: ['./audio/green.mp3', './audio/green.ogg', './audio/green.wav'],
+        src: ['./audio/green.mp3', './audio/green.ogg', './audio/green.wav'],
         loop: true,
       }),
       button2: new Howl({
-        urls: ['./audio/red.mp3', './audio/red.ogg', './audio/red.wav'],
+        src: ['./audio/red.mp3', './audio/red.ogg', './audio/red.wav'],
         loop: true,
       }),
       button3: new Howl({
-        urls: ['./audio/yellow.mp3', './audio/yellow.ogg', './audio/yellow.wav'],
+        src: ['./audio/yellow.mp3', './audio/yellow.ogg', './audio/yellow.wav'],
         loop: true,
       }),
       button4: new Howl({
-        urls: ['./audio/blue.mp3', './audio/blue.ogg', './audio/blue.wav'],
+        src: ['./audio/blue.mp3', './audio/blue.ogg', './audio/blue.wav'],
         loop: true,
       }),
       bad: new Howl({
-        urls: ['./audio/bad.mp3', './audio/bad.ogg', './audio/bad.wav'],
+        src: ['./audio/bad.mp3', './audio/bad.ogg', './audio/bad.wav'],
       }),
     };
   }
